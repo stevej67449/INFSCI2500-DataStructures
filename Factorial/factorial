@@ -1,0 +1,50 @@
+
+import java.util.Scanner;
+
+public class Factorial {
+
+  public static void main (String [] args) {
+    
+    // Create Scanner object to take in user number
+    Scanner in = new Scanner(System.in);
+    
+    // Number for factorial, intially set to zero
+    int x = 0;
+
+    // Factorial result
+    int y;
+
+    // Prompt instructing user for input number
+    System.out.println("Enter a number for the factorial: ");
+
+    // Check input for integer and assign value to x
+    if (in.hasNextInt()) {
+      x = in.nextInt();
+    } // End of if statement
+    
+    while(x != -1) {
+      y = factorial(x);
+      System.out.println("Factorial of " + x + " is " + y);
+      System.out.println("Enter a number for the factorial:");
+      if (in.hasNextInt()){
+        x = in.nextInt;
+      } // End of if statement
+    } // End of while loop
+
+  // Message informing user the process has finished
+  System.out.print("Done");
+  } // End of main method
+
+  public static int factorial(int n) {
+    
+    // Stop condition for recursive loop
+    if (n == 0 || n == 1) {
+      return 1;
+    } else {
+      // Recursive call
+      return n * factorial(n-1);
+    } // End of else statement
+
+  } // End factorial method
+
+} // End of Factorial class
